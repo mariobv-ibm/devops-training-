@@ -1,0 +1,17 @@
+pipeline {
+
+agent { label "master" }
+
+environment { varExample = "valuExample"}
+
+stages {
+  stage("testStage"){ steps{ script { sh "echo hola desde github"} } }
+  }
+  
+  post {
+    always { sh "echo hola desde ALWAYS"}
+    success {sh "echo hola desde SUCCESS"}
+    failure {sh "echo hola desde FAIL"}
+ 
+  }
+}

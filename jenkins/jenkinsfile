@@ -1,5 +1,6 @@
 pipeline {
 
+agent { label "master" }
 
 environment { varExample = "valuExample" 
   date = sh (

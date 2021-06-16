@@ -2,10 +2,12 @@ pipeline {
 
 agent { label "master" }
 
-environment { varExample = "valuExample"}
+environment { varExample = "valuExample" 
+  date = sh "date"
+  }
 
 stages {
-  stage("testStage"){ steps{ script { sh "echo hola desde github"} } }
+  stage("testStage"){ steps{ script { sh "echo THE DATE IS: ${date}"} } }
   }
   
   post {

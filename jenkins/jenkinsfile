@@ -3,7 +3,10 @@ pipeline {
 agent { label "master" }
 
 environment { varExample = "valuExample" 
-  date = sh (script: "date", returnStdout: True )
+  date = sh (
+    script: 'date',
+    returnStdout: true
+).trim()
   }
 
 stages {
